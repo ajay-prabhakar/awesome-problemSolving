@@ -1,0 +1,15 @@
+n = int(input())
+arr = list(map(int, input().split()))
+maxCount = 0
+ones = 0
+for i in range(0, n):
+    for j in range(0, i+1):
+        ones = 0
+        for k in range(0, n):
+            if(k >= j and k <= i):
+                ones += 1-arr[k]
+            else:
+                ones += arr[k]
+
+        maxCount = max(maxCount, ones)
+print(maxCount)
